@@ -46,4 +46,16 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Group::class);
     }
+
+    public function getGenderAttribute()
+    {
+        switch ($this->attributes['gender']) {
+            case config('users.gender.male'):
+                return trans('user.variable.gender.male');
+            case config('users.gender.female'):
+                return trans('user.variable.gender.female');
+            default:
+                return trans('user.variable.gender.other_gender');
+        }
+    }
 }

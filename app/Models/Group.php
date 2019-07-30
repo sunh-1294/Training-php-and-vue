@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\GroupUser;
 use App\Models\Announcement;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -26,5 +27,10 @@ class Group extends Model
     public function announcements()
     {
         return $this->hasMany(Announcement::class);
+    }
+
+    public function groupUsers()
+    {
+        return $this->hasMany(GroupUser::class);
     }
 }
