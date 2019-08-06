@@ -17,6 +17,10 @@ export default {
     userName: 'User Name',
     enterName: 'Enter Name',
     confirmPassword: 'Confirm Password',
+    forgotPassword: 'Forgot password',
+    submit: 'Submit',
+    resetPwdSuccuess: 'Reset Password Success',
+    sendEmailSuccess: 'Sent email, Please check the email',
   },
   user: {
     email: 'Email',

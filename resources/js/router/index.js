@@ -16,8 +16,7 @@ export const constantRoutes = [
   {
     path: '/',
     name: 'Home',
-    redirect: '/login',
-    component: () => import(/* webpackChunkName:"Home" */'@/views/Home/index'),
+    component: () => import(/* webpackChunkName:"Home" */'@/views/Home'),
     meta: {
       guest: true,
     },
@@ -25,7 +24,7 @@ export const constantRoutes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import(/* webpackChunkName:"Login" */'@/views/Login/index'),
+    component: () => import(/* webpackChunkName:"Login" */'@/views/Login'),
     meta: {
       guest: true,
     },
@@ -33,7 +32,15 @@ export const constantRoutes = [
   {
     path: '/signup',
     name: 'SignUp',
-    component: () => import(/* webpackChunkName:"SignUp" */'@/views/SignUp/index'),
+    component: () => import(/* webpackChunkName:"SignUp" */'@/views/SignUp'),
+    meta: {
+      guest: true,
+    },
+  },
+  {
+    path: '/forgot-password',
+    name: 'ForgotPassword',
+    component: () => import(/* webpackChunkName:"SignUp" */'@/views/ForgotPassword'),
     meta: {
       guest: true,
     },
@@ -52,7 +59,7 @@ export const constantRoutes = [
       {
         path: 'profile',
         name: 'Profile',
-        component: () => import(/* webpackChunkName:"Profile" */'@/views/Profile/index'),
+        component: () => import(/* webpackChunkName:"Profile" */'@/views/Profile'),
         meta: {
           requiresAuth: true,
         },

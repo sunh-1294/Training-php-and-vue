@@ -55,7 +55,17 @@
         </div>
 
         <div class="form-group text-right">
-          <span>{{ $t("auth.notHaveAccountYet") }} <a href="#">{{ $t("auth.signUp") }}</a></span>
+          <span>
+            {{ $t("auth.notHaveAccountYet") }}
+            <router-link to="signup">
+              {{ $t("auth.signUp") }}
+            </router-link>
+          </span>
+          <p>
+            <router-link to="forgot-password">
+              {{ $t("auth.forgotPassword") }}
+            </router-link>
+          </p>
         </div>
 
         <button
