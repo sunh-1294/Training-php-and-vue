@@ -1,6 +1,7 @@
 const getters = {
   hello: state => state.app.hello,
-  user: state => state.profile.user,
-  groups: state => state.profile.groups,
+  user: state => state.user.user,
+  groups: state => state.user.groups,
+  announcements: state => state.user.announcements,
 };
 export default getters;

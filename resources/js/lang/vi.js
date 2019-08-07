@@ -25,5 +25,8 @@ export default {
     phone: 'Số điện thoại',
     address: 'Địa chỉ',
     yourGroups: 'Nhóm của bạn',
+    yourAnnouncement: 'Thông báo',
+    nothingGroup: 'Bạn không thuộc bất kỳ nhóm nào',
+    nothingAnnouncement: 'Bạn không có thông báo nào',
   },
 };

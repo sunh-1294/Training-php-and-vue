@@ -1,4 +1,4 @@
-import { login, signUp, getInfo, signOut } from '@/api/user';
+import { login, signUp, getInfo, signOut, announcements } from '@/api/user';
 import { getToken, setToken, removeToken } from '@/utils/auth';
 
 const state = {
@@ -6,6 +6,8 @@ const state = {
   tokenType: '',
   expiresAt: '',
   user: {},
+  groups: [],
+  announcements: [],
 };
 
 const mutations = {
@@ -15,6 +17,9 @@ const mutations = {
   },
   SET_INFO: (_state, info) => {
     _state.user = info;
+  },
+  SET_ANNOUNCEMENTS: (_state, data) => {
+    _state.announcements = data;
   },
 };
 
@@ -44,10 +49,9 @@ const actions = {
   },
   async getInfo({ commit }) {
     try {
-      const { accessToken, expiresAt, user } = await getInfo();
-      commit('SET_TOKEN', { accessToken, expiresAt });
-      commit('SET_INFO', user);
-      return Promise.resolve(user);
+      const data = await getInfo();
+      commit('SET_INFO', data);
+      return Promise.resolve(data);
     } catch (error) {
       return Promise.reject(error);
     }
@@ -58,6 +62,15 @@ const actions = {
       commit('SET_TOKEN', '');
       removeToken();
       return Promise.resolve();
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  },
+  async getAnnouncements({ commit }) {
+    try {
+      const data = await announcements();
+      commit('SET_ANNOUNCEMENTS', data);
+      return Promise.resolve(data);
     } catch (error) {
       return Promise.reject(error);
     }
