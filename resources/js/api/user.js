@@ -61,3 +61,27 @@ export function changeEmail(data) {
     data,
   });
 }
+
+export function forgotPassword(data) {
+  return request({
+    url: 'api/forgot-password',
+    method: 'post',
+    data,
+  });
+}
+
+export function conformTokenForgotPwd(data) {
+  return request({
+    url: 'api/forgot-password/token',
+    method: 'post',
+    data,
+  });
+}
+
+export function completeNewPassword(data) {
+  return request({
+    url: 'api/forgot-password/reset',
+    method: 'post',
+    data,
+  });
+}

@@ -2,10 +2,19 @@ import {
   login,
   signUp,
   getInfo,
+<<<<<<< 7895c6227a798fd2b98e1c36a8fa9e4d236c16f4
   getGroups,
   signOut,
   announcements,
   changeEmail,
+=======
+  signOut,
+  announcements,
+  forgotPassword,
+  conformTokenForgotPwd,
+  completeNewPassword,
+  getGroups,
+>>>>>>> forgot password
 } from '@/api/user';
 import { getToken, setToken, removeToken } from '@/utils/auth';
 
@@ -98,6 +107,30 @@ const actions = {
   async changeEmail(_, payload) {
     try {
       await changeEmail(payload);
+      return Promise.resolve();
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  },
+  async forgotPassword(_, payload) {
+    try {
+      await forgotPassword(payload);
+      return Promise.resolve();
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  },
+  async cofirmToken(_, payload) {
+    try {
+      await conformTokenForgotPwd(payload);
+      return Promise.resolve();
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  },
+  async resetPassword(_, payload) {
+    try {
+      await completeNewPassword(payload);
       return Promise.resolve();
     } catch (error) {
       return Promise.reject(error);

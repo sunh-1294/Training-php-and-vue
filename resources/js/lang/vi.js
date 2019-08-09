@@ -17,6 +17,9 @@ export default {
     userName: 'Tên người dùng',
     enterName: 'Nhập tên người dùng',
     confirmPassword: 'Xác nhận lại mật khẩu',
+    forgotPassword: 'Quên mật khẩu',
+    resetPwdSuccuess: 'Reset mật khẩu thành công',
+    sendEmailSuccess: 'Gửi email reset mật khâu thành công, kiểm tra lại email',
   },
   user: {
     email: 'Email',
