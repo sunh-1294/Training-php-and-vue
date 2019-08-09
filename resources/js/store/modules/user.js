@@ -2,19 +2,13 @@ import {
   login,
   signUp,
   getInfo,
-<<<<<<< 7895c6227a798fd2b98e1c36a8fa9e4d236c16f4
-  getGroups,
   signOut,
-  announcements,
   changeEmail,
-=======
-  signOut,
   announcements,
   forgotPassword,
   conformTokenForgotPwd,
   completeNewPassword,
   getGroups,
->>>>>>> forgot password
 } from '@/api/user';
 import { getToken, setToken, removeToken } from '@/utils/auth';
 
